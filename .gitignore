@@ -1,0 +1,16 @@
+# Build output
+bin/
+obj/
+dist/
+
+# Reference material only (third-party browser extensions), not part of this app
+extensions/
+*.zip
+
+# Editors
+.vs/
+.vscode/
+*.user
+
+# SDK monitor output (the issue body; regenerated on every change)
+tools/sdk-monitor/report.md

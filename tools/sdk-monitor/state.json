@@ -1,0 +1,34 @@
+{
+  "sdkSeen": {
+    "playback-service 26.16.1-piglet": "https://hiveplayer-static.bamgrid.com/artifacts/hive/playback-service/26.16.1-piglet/all_browser_es5/playback-service.js",
+    "playback-service 26.16.2-piglet": "https://hiveplayer-static.bamgrid.com/artifacts/hive/playback-service/26.16.2-piglet/all_browser_es5/playback-service.js",
+    "playback-session 26.16.0-piglet": "https://hiveplayer-static.bamgrid.com/artifacts/hive/playback-session/26.16.0-piglet/all_browser_es6/playback-session.js",
+    "playback-session 26.16.2-piglet": "https://hiveplayer-static.bamgrid.com/artifacts/hive/playback-session/26.16.2-piglet/all_browser_es6/playback-session.js"
+  },
+  "playerLatest": "2.3.1",
+  "edgeConfig": {
+    "hash": "18f8f5d8d06e571e",
+    "documentVersion": "v309",
+    "flat": {
+      "engine.allowMediaSourceReuse": "true",
+      "engine.allowSeamlessSwitch": "true",
+      "engine.drmKeySystem": "\"WIDEVINE\"",
+      "engine.drmPlayReadyRecommendationFlow": "false",
+      "engine.drmWidevineHdcpCheckEnabled": "true",
+      "session.enableDrmPreflightCheck": "false",
+      "session.linear.playbackAttributesConfig.minLiveSegmentTargetDuration": "3",
+      "session.linear.playlistFiltering.blockVideoFormats": "[\"HEVC_SDR\",\"HEVC_HDR10\",\"HEVC_HDR10_PLUS\",\"HEVC_DOLBY_VISION_5\",\"HEVC_DOLBY_VISION_8\",\"HEVC_DOLBY_VISION_20\"]",
+      "session.linear.playlistFiltering.maxHeight": "720",
+      "session.linear.playlistFiltering.maxSlideDuration": "\"4_HOUR\"",
+      "session.live.playbackAttributesConfig.minLiveSegmentTargetDuration": "3",
+      "session.live.playlistFiltering.blockVideoFormats": "[\"HEVC_SDR\",\"HEVC_HDR10\",\"HEVC_HDR10_PLUS\",\"HEVC_DOLBY_VISION_5\",\"HEVC_DOLBY_VISION_8\",\"HEVC_DOLBY_VISION_20\"]",
+      "session.live.playlistFiltering.maxHeight": "720",
+      "session.live.playlistFiltering.maxSlideDuration": "\"4_HOUR\"",
+      "session.vod.playlistFiltering.blockAudioFormats": "[\"EAC3_ATMOS\",\"EAC3_STEREO\",\"DTS_X\"]",
+      "session.vod.playlistFiltering.blockVideoFormats": "[\"HEVC_SDR\",\"HEVC_HDR10\",\"HEVC_HDR10_PLUS\",\"HEVC_DOLBY_VISION_5\",\"HEVC_DOLBY_VISION_8\",\"HEVC_DOLBY_VISION_20\"]",
+      "session.vod.playlistFiltering.blockVp9ForAll": "false",
+      "session.vod.playlistFiltering.maxHeight": "720"
+    }
+  },
+  "webView2Reported": "1.0.4370.26"
+}

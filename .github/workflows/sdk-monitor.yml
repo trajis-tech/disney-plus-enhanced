@@ -1,0 +1,48 @@
+# Hourly check of the Disney+ playback SDK, web player, Disney+'s Edge player config and the WebView2 SDK.
+# Changes are reported as a GitHub issue (with compatibility checks); nothing is released automatically.
+name: SDK monitor
+
+on:
+  schedule:
+    - cron: '23 * * * *'
+  workflow_dispatch:
+
+permissions:
+  contents: write
+  issues: write
+
+concurrency:
+  group: sdk-monitor
+  cancel-in-progress: false
+
+jobs:
+  monitor:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v7
+
+      - uses: actions/setup-node@v7
+        with:
+          node-version: 24
+
+      - name: Check for SDK changes
+        id: monitor
+        run: node tools/sdk-monitor/monitor.mjs
+
+      - name: Open an issue
+        if: steps.monitor.outputs.changed == 'true'
+        env:
+          GH_TOKEN: ${{ github.token }}
+          TITLE: ${{ steps.monitor.outputs.title }}
+        run: |
+          gh label create sdk-monitor --color 0E8A16 --description "Reported by the SDK monitor" || true
+          gh issue create --title "$TITLE" --body-file tools/sdk-monitor/report.md --label sdk-monitor
+
+      - name: Remember what was reported
+        if: steps.monitor.outputs.changed == 'true'
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898341+github-actions[bot]@users.noreply.github.com"
+          git add tools/sdk-monitor/state.json
+          git commit -m "SDK monitor: record reported versions"
+          git push

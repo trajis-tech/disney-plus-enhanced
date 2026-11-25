@@ -1,0 +1,3 @@
+# Inno Setup translations keep their original bytes (some use legacy code pages).
+*.isl -text
+*.ico binary
